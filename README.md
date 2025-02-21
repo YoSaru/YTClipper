@@ -24,7 +24,7 @@
 
       git clone https://github.com/YoSaru/YTClipper.git
 
-      cd TYClipper
+      cd YTClipper
       
          
    4. Run the script:
