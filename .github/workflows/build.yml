@@ -20,15 +20,17 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install Dependencies (if applicable)
+      - name: Install Dependencies (Ensure PyInstaller is Installed)
         run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        shell: bash
-
-      - name: Build Executable (Using PyInstaller for Python)
-        run: |
-          pyinstaller --onefile YTClipper.py  # Modify for your build process
+          python -m pip install --upgrade pip
+          pip install pyinstaller
         shell: cmd
+
+      - name: Build Executable (Using PyInstaller)
+        run: |
+          pyinstaller --onefile YTClipper.py
+        shell: cmd
+
 
       - name: Show Output Files (Debugging Step)
         run: |
