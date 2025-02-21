@@ -31,4 +31,12 @@ jobs:
       - name: Build Executable (Using PyInstaller for Python)
         run: |
           pyinstaller --onefile your_script.py  # Modify for your build process
-      
+        shell: cmd
+
+      - name: Show Output Files (Debugging Step)
+        run: |
+          dir dist\
+        shell: cmd
+
+      - name: Archive Executable
+        run: Compress-Archive -Path dist/
