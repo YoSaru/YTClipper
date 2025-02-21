@@ -31,11 +31,18 @@ jobs:
           pyinstaller --onefile YTClipper.py
         shell: cmd
 
-
       - name: Show Output Files (Debugging Step)
         run: |
           dir dist\
         shell: cmd
 
       - name: Archive Executable
-        run: Compress-Archive -Path dist/
+        run: Compress-Archive -Path dist/YTClipper.exe -DestinationPath release.zip
+        shell: pwsh
+
+      - name: Upload EXE to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
