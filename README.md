@@ -14,13 +14,15 @@
      pip install yt-dlp
    
    Download and install FFmpeg:
+  
    FFmpeg Download Page : https://ffmpeg.org/download.html
 
    2. Clone the repository using Git
-        git clone https://github.com/YoSaru/YTClipper.git /n
-        cd YTClipper
-   
-   3. Run the script:
+
+        git clone https://github.com/YoSaru/YTClipper.git
+      
+         
+   4. Run the script:
         python YTClipper.py
 
 
