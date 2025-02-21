@@ -30,7 +30,7 @@ jobs:
 
       - name: Build Executable (Using PyInstaller for Python)
         run: |
-          pyinstaller --onefile your_script.py  # Modify for your build process
+          pyinstaller --onefile YTClipper.py  # Modify for your build process
         shell: cmd
 
       - name: Show Output Files (Debugging Step)
