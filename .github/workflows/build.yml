@@ -15,9 +15,6 @@ jobs:
         with:
           fetch-depth: 0  # Ensures full repository history is available
 
-      - name: Ensure GitHub has access to repo
-        run: git fetch --unshallow
-
       - name: Set Up Python (if using Python)
         uses: actions/setup-python@v4
         with:
