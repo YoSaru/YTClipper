@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Ensures full repository history is available
+
+      - name: Ensure GitHub has access to repo
+        run: git fetch --unshallow
 
       - name: Set Up Python (if using Python)
         uses: actions/setup-python@v4
@@ -20,20 +25,10 @@ jobs:
 
       - name: Install Dependencies (if applicable)
         run: |
-          pip install -r requirements.txt  # Modify based on your project
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        shell: bash
 
       - name: Build Executable (Using PyInstaller for Python)
         run: |
           pyinstaller --onefile your_script.py  # Modify for your build process
-        shell: cmd  # This line is optional, but if needed, keep it
-
-      - name: Archive Executable
-        run: Compress-Archive -Path dist/your_script.exe -DestinationPath release.zip
-        shell: pwsh
-
-      - name: Upload EXE to GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: release.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
