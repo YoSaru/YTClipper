@@ -23,9 +23,11 @@
    2. Clone the repository using Git
 
       git clone https://github.com/YoSaru/YTClipper.git
+
+      cd TYClipper
       
          
-   3. Run the script:
+   4. Run the script:
       
       python YTClipper.py
 
