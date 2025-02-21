@@ -22,10 +22,10 @@ jobs:
         run: |
           pip install -r requirements.txt  # Modify based on your project
 
-      - name: Build Executable (Example: Using PyInstaller for Python)
+      - name: Build Executable (Using PyInstaller for Python)
         run: |
           pyinstaller --onefile your_script.py  # Modify for your build process
-        shell: cmd
+        shell: cmd  # This line is optional, but if needed, keep it
 
       - name: Archive Executable
         run: Compress-Archive -Path dist/your_script.exe -DestinationPath release.zip
