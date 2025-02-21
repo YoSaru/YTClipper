@@ -1,0 +1,39 @@
+name: Build and Release EXE
+
+on:
+  push:
+    tags:
+      - "v*"  # Triggers when a new version tag is pushed (e.g., v1.0)
+
+jobs:
+  build:
+    runs-on: windows-latest  # Runs the workflow on Windows OS
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Python (if using Python)
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies (if applicable)
+        run: |
+          pip install -r requirements.txt  # Modify based on your project
+
+      - name: Build Executable (Example: Using PyInstaller for Python)
+        run: |
+          pyinstaller --onefile your_script.py  # Modify for your build process
+        shell: cmd
+
+      - name: Archive Executable
+        run: Compress-Archive -Path dist/your_script.exe -DestinationPath release.zip
+        shell: pwsh
+
+      - name: Upload EXE to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
