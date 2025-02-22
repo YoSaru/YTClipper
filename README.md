@@ -14,11 +14,20 @@
    1. Install yt-dlp and FFmpeg
    
    Install yt-dlp:
-     pip install yt-dlp
+
+	https://github.com/yt-dlp/yt-dlp/releases
+
+	pip install yt-dlp
    
    Download and install FFmpeg:
   
    FFmpeg Download Page : https://ffmpeg.org/download.html
+
+	or
+	
+   https://github.com/BtbN/FFmpeg-Builds/releases
+	
+
 
    2. Clone the repository using Git
 
