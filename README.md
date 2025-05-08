@@ -1,46 +1,35 @@
-#YTClipper
-   A simple tool to download and trim videos using yt-dlp and ffmpeg.
 
-   Features:
-   
-   Download videos from YouTube and other supported sites.
-   
-   Trim videos by specifying start and end times.
-   
-   Save videos to a custom location.
+# YTClipper GUI – YouTube Video Downloader & Trimmer
 
+A lightweight Python tool with GUI for downloading YouTube videos, trimming by timestamp, and exporting in `.mp4`, `.mkv`, or `.webm`.
 
-##Installation:
-   1. Install yt-dlp and FFmpeg
-   
-   Install yt-dlp:
+## 🛠 Requirements
+- Python 3.8+
+- [`yt-dlp`](https://github.com/yt-dlp/yt-dlp): `pip install -U yt-dlp`
+- [`ffmpeg`](https://ffmpeg.org/download.html) (must be in PATH)
 
-	https://github.com/yt-dlp/yt-dlp/releases
+## 🚀 Features
+- Trim by start/end timestamp (optional)
+- Choose output resolution (720p–4K)
+- Select output format: mp4, mkv, or webm
+- Batch processing via CSV
+- GUI built with `tkinter`
 
-	pip install yt-dlp
-   
-   Download and install FFmpeg:
-  
-   FFmpeg Download Page : https://ffmpeg.org/download.html
+## 📦 Usage
+1. Run the script:
+   ```bash
+   python ytclipper_gui_updated.py
+   ```
+2. Paste a YouTube URL
+3. Choose filename, resolution, and format
+4. Optionally trim
+5. Click **Download and Process** or use **Batch Process from CSV**
 
-	or
-	
-   https://github.com/BtbN/FFmpeg-Builds/releases
-	
+## 📁 CSV Format (for batch)
+```
+url,filename,start_time,end_time
+https://youtube.com/... , myclip , 00:01:00 , 00:01:30
+```
 
-
-   2. Clone the repository using Git
-
-      git clone https://github.com/YoSaru/YTClipper.git
-
-      cd YTClipper
-      
-         
-   4. Run the script:
-      
-      python YTClipper.py
-
-
-
-
-
+## 💬 License
+MIT – Free to use, tweak, and share!
