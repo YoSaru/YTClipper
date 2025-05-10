@@ -32,4 +32,13 @@ https://youtube.com/... , myclip , 00:01:00 , 00:01:30
 ```
 
 ## 💬 License
-MIT – Free to use, tweak, and share!
+MIT – Free to use, tweak, and share!### 🔵 FFmpeg Cutter Tab
+- Trim **local video files** using FFmpeg
+- Choose start and end times
+- Optional custom title (skips timestamp auto-naming if set)
+- Separate output directory
+- ✅ New: **Force Re-encode** option for guaranteed compatibility
+  - When unchecked: fast, stream copy (`-c copy`)
+  - When checked: re-encodes using `libx264` + `aac` for full reliability
+
+
